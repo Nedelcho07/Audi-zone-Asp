@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Audi-zone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3872ba8da20eaff47d11ebc0117df6212525c8bd")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c044c530a7171fa0ea81f857b2dd75f0e0f55cb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Audi-zone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Audi-zone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
