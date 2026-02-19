@@ -46,11 +46,11 @@ namespace Audi_zone.Areas.Identity.Pages.Account
             _emailSender = emailSender;
         }
 
-       
+
         [BindProperty]
         public InputModel Input { get; set; }
 
-     
+
         public string ReturnUrl { get; set; }
 
 
@@ -60,7 +60,7 @@ namespace Audi_zone.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [Display(Name = "Nic name")]
+            [Display(Name = "Nick name")]
             public string UserName { get; set; }
 
             [Required]
@@ -106,7 +106,12 @@ namespace Audi_zone.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = CreateUser();
+                Client user = new Client();
+                user.Email = Input.Email;
+                user.FirstName = Input.FirstName;
+                user.LastName = Input.LastName;
+                user.PhoneNumber = Input.PhoneNumber;
+                user.UserName = Input.UserName;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
