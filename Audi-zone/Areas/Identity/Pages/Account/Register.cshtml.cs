@@ -60,7 +60,7 @@ namespace Audi_zone.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [Display(Name = "Nick name")]
+            [Display(Name = "Username")]
             public string UserName { get; set; }
 
             [Required]
@@ -113,13 +113,14 @@ namespace Audi_zone.Areas.Identity.Pages.Account
                 user.PhoneNumber = Input.PhoneNumber;
                 user.UserName = Input.UserName;
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
+                    await _userManager.AddToRoleAsync(user, "User");
 
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
