@@ -1,5 +1,6 @@
 using Audi_zone.Data;
 using Audi_zone.Models;
+using Audi_zone.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,9 +22,12 @@ namespace Audi_zone
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
+
+            app.PrepareDataBase().Wait();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
