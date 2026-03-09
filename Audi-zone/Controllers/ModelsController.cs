@@ -56,6 +56,7 @@ namespace Audi_zone.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,ModelName,DateRegOn")] Model model)
         {
+
             if (ModelState.IsValid)
             {
                 _context.Add(model);
