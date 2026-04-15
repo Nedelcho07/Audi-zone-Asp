@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\1212-3\\Desktop\\nh7\\Audi-zone\\Audi-zone\\Audi-zone.csproj": {}
+    "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Audi-zone.csproj": {}
   },
   "projects": {
-    "C:\\Users\\1212-3\\Desktop\\nh7\\Audi-zone\\Audi-zone\\Audi-zone.csproj": {
+    "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Audi-zone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\1212-3\\Desktop\\nh7\\Audi-zone\\Audi-zone\\Audi-zone.csproj",
+        "projectUniqueName": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Audi-zone.csproj",
         "projectName": "Audi-zone",
-        "projectPath": "C:\\Users\\1212-3\\Desktop\\nh7\\Audi-zone\\Audi-zone\\Audi-zone.csproj",
+        "projectPath": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Audi-zone.csproj",
         "packagesPath": "C:\\Users\\1212-3\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\1212-3\\Desktop\\nh7\\Audi-zone\\Audi-zone\\obj\\",
+        "outputPath": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

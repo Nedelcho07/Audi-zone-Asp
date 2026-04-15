@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Audi_zone.Data;
 using Audi_zone.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,18 +8,26 @@ namespace Audi_zone.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var models = _context.Models.ToList();
+            return View(models);
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Contacts()
         {
             return View();
         }

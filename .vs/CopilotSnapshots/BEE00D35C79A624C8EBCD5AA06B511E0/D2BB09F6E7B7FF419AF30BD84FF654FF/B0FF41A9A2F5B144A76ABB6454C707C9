@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Audi_zone.Models.Model>
+
+@{
+    ViewData["Title"] = "Начало";
+}
+
+<div class="p-5 mb-4 bg-dark text-white rounded-3 shadow-lg" style="background-image: url('https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?q=80&w=2074&auto=format&fit=crop'); background-size: cover; background-position: center;">
+    <div class="container-fluid py-5" style="background-color: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">
+        <h1 class="display-5 fw-bold">Твоят доверен партньор за части Audi</h1>
+        <p class="col-md-8 fs-4">Открий оригинални и алтернативни авточасти за всички модели на Audi. Бързо търсене, сигурна доставка.</p>
+
+        <form class="d-flex w-50 mt-4" role="search">
+            <input class="form-control me-2 py-2" type="search" placeholder="Търси по код или име на част..." aria-label="Search">
+            <button class="btn btn-danger px-4" type="submit">Търси</button>
+        </form>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h3 class="mb-4 border-bottom pb-2">Избери своя модел</h3>
+    <div class="row g-4">
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Audi A4</h5>
+                    <p class="card-text text-muted">B8, B9 (2008 - 2023)</p>
+                    <a href="#" class="btn btn-outline-dark btn-sm">Виж частите</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Audi A6</h5>
+                    <p class="card-text text-muted">C7, C8 (2011 - 2023)</p>
+                    <a href="#" class="btn btn-outline-dark btn-sm">Виж частите</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm text-center">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Audi Q5</h5>
+                    <p class="card-text text-muted">8R, FY (2008 - 2023)</p>
+                    <a href="#" class="btn btn-outline-dark btn-sm">Виж частите</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card h-100 shadow-sm text-center bg-light">
+                <div class="card-body d-flex align-items-center justify-content-center">
+                    <a href="#" class="text-decoration-none text-dark fw-bold">Разгледай всички модели <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

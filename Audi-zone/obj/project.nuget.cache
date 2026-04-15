@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XuI80kLZc2E=",
+  "dgSpecHash": "36Rqin/U0+8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\1212-3\\Desktop\\nh7\\Audi-zone\\Audi-zone\\Audi-zone.csproj",
+  "projectFilePath": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Audi-zone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\1212-3\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\1212-3\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

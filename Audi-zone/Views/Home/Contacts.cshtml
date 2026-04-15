@@ -1,0 +1,138 @@
+@{
+    ViewData["Title"] = "Контакти";
+}
+
+<div class="p-5 mb-4 bg-dark text-white rounded-3 shadow-lg">
+    <div class="container-fluid py-5" style="background-color: rgba(0,0,0,0.6); padding: 20px; border-radius: 10px;">
+        <h1 class="display-5 fw-bold"><i class="bi bi-telephone"></i> Свържете се с нас</h1>
+        <p class="col-md-8 fs-4">Имаме екип, готов да ви помогне с всички ваши въпроси относно авточастите на Audi.</p>
+    </div>
+</div>
+
+<div class="container mt-5 mb-5">
+    <div class="row g-4">
+        <!-- Contact Info Cards -->
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-telephone-fill text-danger" style="font-size: 2rem;"></i>
+                    <h5 class="card-title mt-3 fw-bold">Телефон</h5>
+                    <p class="card-text text-muted">
+                        +359 88 888 8888<br>
+                        +359 89 808 0808
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-envelope-fill text-danger" style="font-size: 2rem;"></i>
+                    <h5 class="card-title mt-3 fw-bold">Имейл</h5>
+                    <p class="card-text text-muted">
+                        <a class="text-decoration-none text-dark fw-bold">info@audi-zone.bg</a><br>
+                        <a  class="text-decoration-none text-dark fw-bold">support@audi-zone.bg</a>
+                    </p>
+                    <small class="text-muted">Отговор в рамките на 24 часа</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-0 h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-geo-alt-fill text-danger" style="font-size: 2rem;"></i>
+                    <h5 class="card-title mt-3 fw-bold">Адрес</h5>
+                    <p class="card-text text-muted">
+                        ул. "Н. Вапцаров" №15<br>
+                        1000 София, България
+                    </p>
+                    <small class="text-muted">Физически офис</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="row mt-5">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-dark text-white">
+                    <h5 class="mb-0"><i class="bi bi-chat-dots"></i> Изпрати ни съобщение</h5>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label fw-bold">Пълното ви име</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="Въведете вашето име" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-bold">Имейл адрес</label>
+                            <input type="email" class="form-control" id="email" placeholder="Въведете вашия имейл" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label fw-bold">Телефонен номер (опционално)</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="+359 88 123 4567">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="subject" class="form-label fw-bold">Тема</label>
+                            <select class="form-select" id="subject" required>
+                                <option value="">-- Изберете тема --</option>
+                                <option value="inquiry">Запитване</option>
+                                <option value="complaint">Оплакване</option>
+                                <option value="support">Технична поддръжка</option>
+                                <option value="other">Друго</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="message" class="form-label fw-bold">Съобщение</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Напишете вашето съобщение..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-danger px-4">
+                            <i class="bi bi-send"></i> Изпрати съобщение
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Working Hours Section -->
+    <div class="row mt-5">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow-sm border-0 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold mb-3"><i class="bi bi-clock"></i> Работно време</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><strong>Понеделник - Петък:</strong> 09:00 - 18:00</li>
+                                <li class="mb-2"><strong>Събота:</strong> 10:00 - 14:00</li>
+                                <li class="mb-2"><strong>Неделя:</strong> Затворено</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="text-muted">
+                                За спешни случаи, можете да ни потърсите в <strong>работни часове</strong>. 
+                                Отговаряме на всички имейли в рамките на <strong>24 часа</strong>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .bi {
+        color: #dc3545;
+    }
+</style>
