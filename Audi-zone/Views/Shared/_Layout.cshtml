@@ -1,4 +1,18 @@
 ﻿<!DOCTYPE html>
+@inject Audi_zone.Data.ApplicationDbContext DbContext
+@inject Microsoft.AspNetCore.Identity.UserManager<Audi_zone.Models.Client> UserManager
+
+@{
+    var cartItemsCount = 0;
+    if (User?.Identity?.IsAuthenticated ?? false)
+    {
+        var currentUserId = UserManager.GetUserId(User);
+        cartItemsCount = DbContext.Carts
+            .Where(c => c.ClientId == currentUserId)
+            .Sum(c => (int?)c.Quantity) ?? 0;
+    }
+}
+
 <html lang="bg">
 <head>
     <meta charset="utf-8" />
@@ -21,16 +35,6 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown">
-                                Категории части
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Двигател</a></li>
-                                <li><a class="dropdown-item" href="#">Окачване</a></li>
-                                <li><a class="dropdown-item" href="#">Спирачна система</a></li>
-                            </ul>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-controller="Products" asp-action="Index">Всички части</a>
                         </li>
@@ -43,8 +47,8 @@
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-light" asp-controller="Cart" asp-action="Index">
-                                    <i class="bi bi-cart3"></i> Количка <span class="badge bg-danger rounded-pill">0</span>
+                                <a class="nav-link text-light" asp-controller="Carts" asp-action="Index">
+                                    <i class="bi bi-cart3"></i> Количка <span class="badge bg-danger rounded-pill">@cartItemsCount</span>
                                 </a>
                             </li>
                             <li class="nav-item">

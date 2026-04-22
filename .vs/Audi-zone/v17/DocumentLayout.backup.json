@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\services\\applicationbuilderextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\services\\applicationbuilderextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -43,10 +51,6 @@
       "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\controllers\\modelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\controllers\\modelscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -73,6 +77,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\views\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\views\\carts\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\areas\\identity\\pages\\account\\logout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\areas\\identity\\pages\\account\\logout.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|c:\\users\\1212-3\\desktop\\nh7\\diplomen proekt\\audi-zone\\audi-zone\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{79F09548-3771-4F1C-97FD-72DD2D453DA0}|Audi-zone\\Audi-zone.csproj|solutionrelative:audi-zone\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,37 +106,114 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Audi-zone\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Audi-zone\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABcAAAAAAAAAAAAowAwAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-23T10:58:06.742Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 20,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Audi-zone\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Audi-zone\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Carts\\Index.cshtml",
+              "RelativeDocumentMoniker": "Audi-zone\\Views\\Carts\\Index.cshtml",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Carts\\Index.cshtml",
+              "RelativeToolTip": "Audi-zone\\Views\\Carts\\Index.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-15T08:05:45.47Z",
+              "WhenOpened": "2026-04-22T08:05:34.586Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 23,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Audi-zone\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Models\\Order.cs",
+              "RelativeToolTip": "Audi-zone\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T08:47:20.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartsController.cs",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Controllers\\CartsController.cs",
+              "RelativeDocumentMoniker": "Audi-zone\\Controllers\\CartsController.cs",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Controllers\\CartsController.cs",
+              "RelativeToolTip": "Audi-zone\\Controllers\\CartsController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAuwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:33:05.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationBuilderExtension.cs",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Services\\ApplicationBuilderExtension.cs",
+              "RelativeDocumentMoniker": "Audi-zone\\Services\\ApplicationBuilderExtension.cs",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Services\\ApplicationBuilderExtension.cs",
+              "RelativeToolTip": "Audi-zone\\Services\\ApplicationBuilderExtension.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwEMAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T11:18:04.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Audi-zone\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "Audi-zone\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-22T07:46:34.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Logout.cshtml",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "RelativeDocumentMoniker": "Audi-zone\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "RelativeToolTip": "Audi-zone\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-22T08:31:18.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Logout.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "RelativeDocumentMoniker": "Audi-zone\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "RelativeToolTip": "Audi-zone\\Areas\\Identity\\Pages\\Account\\Logout.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T08:31:28.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Audi-zone\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "Audi-zone\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAQwCAAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-22T07:34:44.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ProductsController.cs",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Controllers\\ProductsController.cs",
               "RelativeDocumentMoniker": "Audi-zone\\Controllers\\ProductsController.cs",
@@ -120,25 +221,36 @@
               "RelativeToolTip": "Audi-zone\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAqwMUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T11:13:45.011Z",
+              "WhenOpened": "2026-04-14T11:13:45.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Audi-zone\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Audi-zone\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-15T08:05:45.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Audi-zone\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Audi-zone\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAIBJwBoAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-23T10:58:06.742Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationBuilderExtension.cs",
-              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Services\\ApplicationBuilderExtension.cs",
-              "RelativeDocumentMoniker": "Audi-zone\\Services\\ApplicationBuilderExtension.cs",
-              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Services\\ApplicationBuilderExtension.cs",
-              "RelativeToolTip": "Audi-zone\\Services\\ApplicationBuilderExtension.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowEMAAABWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T11:18:04.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Contacts.cshtml",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Home\\Contacts.cshtml",
               "RelativeDocumentMoniker": "Audi-zone\\Views\\Home\\Contacts.cshtml",
@@ -146,25 +258,24 @@
               "RelativeToolTip": "Audi-zone\\Views\\Home\\Contacts.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-15T08:51:17.326Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-15T08:51:17.326Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Audi-zone\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "Audi-zone\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAEBTwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-15T09:02:41.909Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ModelsController.cs",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Controllers\\ModelsController.cs",
               "RelativeDocumentMoniker": "Audi-zone\\Controllers\\ModelsController.cs",
@@ -176,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Products\\Details.cshtml",
               "RelativeDocumentMoniker": "Audi-zone\\Views\\Products\\Details.cshtml",
@@ -184,12 +295,11 @@
               "RelativeToolTip": "Audi-zone\\Views\\Products\\Details.cshtml",
               "ViewState": "AgIAAEQAAAAAAAAAAIBJwEcAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-14T11:18:46.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T11:18:46.423Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Products\\Create.cshtml",
               "RelativeDocumentMoniker": "Audi-zone\\Views\\Products\\Create.cshtml",
@@ -201,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Audi-zone\\Controllers\\HomeController.cs",
@@ -209,12 +319,11 @@
               "RelativeToolTip": "Audi-zone\\Controllers\\HomeController.cs",
               "ViewState": "AgIAACAAAAAAAAAAAEBUwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-14T11:15:07.708Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-14T11:15:07.708Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Products\\Index.cshtml",
               "RelativeDocumentMoniker": "Audi-zone\\Views\\Products\\Index.cshtml",
@@ -222,24 +331,11 @@
               "RelativeToolTip": "Audi-zone\\Views\\Products\\Index.cshtml",
               "ViewState": "AgIAAHMAAAAAAAAAAAD4vw8AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-04-15T08:09:44.882Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-15T08:09:44.882Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CartsController.cs",
-              "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Controllers\\CartsController.cs",
-              "RelativeDocumentMoniker": "Audi-zone\\Controllers\\CartsController.cs",
-              "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Controllers\\CartsController.cs",
-              "RelativeToolTip": "Audi-zone\\Controllers\\CartsController.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAIwEUAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-16T10:33:05.287Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ProductType.cs",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Models\\ProductType.cs",
               "RelativeDocumentMoniker": "Audi-zone\\Models\\ProductType.cs",
@@ -251,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Model.cs",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Models\\Model.cs",
               "RelativeDocumentMoniker": "Audi-zone\\Models\\Model.cs",
@@ -263,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Audi-zone\\Models\\Product.cs",
@@ -275,19 +371,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Client.cs",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Models\\Client.cs",
               "RelativeDocumentMoniker": "Audi-zone\\Models\\Client.cs",
               "ToolTip": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Models\\Client.cs",
               "RelativeToolTip": "Audi-zone\\Models\\Client.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAEBTwAQAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T11:03:53.443Z"
+              "WhenOpened": "2026-03-30T11:03:53.443Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Cart.cs",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "Audi-zone\\Models\\Cart.cs",
@@ -299,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\1212-3\\Desktop\\nh7\\DIPLOMEN PROEKT\\Audi-zone\\Audi-zone\\Views\\Carts\\Create.cshtml",
               "RelativeDocumentMoniker": "Audi-zone\\Views\\Carts\\Create.cshtml",
