@@ -29,3 +29,88 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* Navigation Profile Dropdown Styles */
+.navbar-nav .nav-link.dropdown-toggle {
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-nav .nav-link.dropdown-toggle:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545 !important;
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.dropdown-toggle i {
+  font-size: 1.3rem;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+  color: #212529;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #dc3545;
+  padding-left: 1.2rem;
+}
+
+.dropdown-item.text-danger:hover {
+  background-color: #ffe5e5;
+  color: #bb2d3b !important;
+}
+
+.dropdown-item i {
+  width: 18px;
+  text-align: center;
+}
+
+.dropdown-divider {
+  margin: 0.5rem 0;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Profile Badge in Dropdown */
+.dropdown-item .badge {
+  font-size: 0.75rem;
+}
+
+/* Navbar Responsive */
+@media (max-width: 576px) {
+  .navbar-nav .nav-link.dropdown-toggle span {
+    display: none !important;
+  }
+}
+
+/* Profile Link Badge Animation */
+.navbar-nav .badge {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(220, 53, 69, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
