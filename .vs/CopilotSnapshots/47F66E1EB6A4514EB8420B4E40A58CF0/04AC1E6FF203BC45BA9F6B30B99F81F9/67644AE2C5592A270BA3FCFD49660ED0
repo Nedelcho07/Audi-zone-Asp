@@ -1,0 +1,86 @@
+﻿using Audi_zone.Data;
+using Audi_zone.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace Audi_zone.Areas.Identity.Pages.Admin
+{
+    [Authorize(Roles = "Admin")]
+    public class DashboardModel : PageModel
+    {
+        private readonly ApplicationDbContext _context;
+
+        public DashboardModel(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public int TotalProducts { get; set; }
+        public int TotalModels { get; set; }
+        public int TotalProductTypes { get; set; }
+        public int TotalCarts { get; set; }
+        public int TotalClients { get; set; }
+        public decimal TotalCartValue { get; set; }
+
+        public List<Product> RecentProducts { get; set; } = new();
+        public List<Model> AllModels { get; set; } = new();
+        public List<ProductType> AllProductTypes { get; set; } = new();
+        public List<Client> AllClients { get; set; } = new();
+
+        public void OnGet()
+        {
+            try
+            {
+                // Получи статистика
+                TotalProducts = _context.Products.Count();
+                TotalModels = _context.Models.Count();
+                TotalProductTypes = _context.ProductTypes.Count();
+                TotalCarts = _context.Carts.Count();
+                TotalClients = _context.Users.Count();
+                
+                try
+                {
+                    TotalCartValue = _context.Carts
+                        .Join(_context.Products, 
+                            c => c.ProductId, 
+                            p => p.Id, 
+                            (c, p) => c.Quantity * p.Price)
+                        .Sum();
+                }
+                catch
+                {
+                    TotalCartValue = 0;
+                }
+
+                // Получи последните продукти
+                RecentProducts = _context.Products
+                    .OrderByDescending(p => p.DateRegOn)
+                    .Take(5)
+                    .ToList();
+
+                // Получи всички модели и типове
+                AllModels = _context.Models.ToList();
+                AllProductTypes = _context.ProductTypes.ToList();
+
+                // Получи всички потребители
+                AllClients = _context.Users
+                    .OrderByDescending(u => u.DateJoined ?? DateTime.MinValue)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                // Log error if needed
+                TotalProducts = 0;
+                TotalModels = 0;
+                TotalProductTypes = 0;
+                TotalCarts = 0;
+                TotalClients = 0;
+                TotalCartValue = 0;
+                RecentProducts = new();
+                AllModels = new();
+                AllProductTypes = new();
+                AllClients = new();
+            }
+        }
+    }
+}

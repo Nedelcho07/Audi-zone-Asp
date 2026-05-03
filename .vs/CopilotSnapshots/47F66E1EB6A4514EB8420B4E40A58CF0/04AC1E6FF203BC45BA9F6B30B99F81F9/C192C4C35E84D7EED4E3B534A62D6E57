@@ -1,0 +1,526 @@
+﻿@page
+@model Audi_zone.Areas.Identity.Pages.Admin.DashboardModel
+@using Microsoft.AspNetCore.Identity
+
+@{
+    ViewData["Title"] = "Админ Панел";
+}
+
+<div class="admin-dashboard">
+    <!-- Header -->
+    <div class="admin-header mb-5 p-4 bg-dark text-white rounded-3 shadow-lg">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="mb-2">
+                    <i class="bi bi-speedometer2 me-2"></i>Админ Панел
+                </h1>
+                <p class="mb-0 text-warning">Управление на целия каталог и данни</p>
+            </div>
+            <div class="col-md-4 text-end">
+                <p class="mb-0 text-muted">
+                    <small>
+                        <i class="bi bi-calendar3 me-2"></i>
+                        <span id="current-date"></span>
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row mb-5">
+        <div class="col-md-4 mb-3">
+            <div class="stat-card bg-white rounded-3 shadow-sm p-4 border-start border-danger border-5">
+                <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-danger bg-opacity-10 p-3 rounded-3 me-3">
+                        <i class="bi bi-box2 text-danger fs-3"></i>
+                    </div>
+                    <div>
+                        <p class="text-muted mb-1">Общо части</p>
+                        <h3 class="mb-0">@Model.TotalProducts</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="stat-card bg-white rounded-3 shadow-sm p-4 border-start border-primary border-5">
+                <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-primary bg-opacity-10 p-3 rounded-3 me-3">
+                        <i class="bi bi-car-front text-primary fs-3"></i>
+                    </div>
+                    <div>
+                        <p class="text-muted mb-1">Модели</p>
+                        <h3 class="mb-0">@Model.TotalModels</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="stat-card bg-white rounded-3 shadow-sm p-4 border-start border-success border-5">
+                <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-success bg-opacity-10 p-3 rounded-3 me-3">
+                        <i class="bi bi-tag text-success fs-3"></i>
+                    </div>
+                    <div>
+                        <p class="text-muted mb-1">Категории</p>
+                        <h3 class="mb-0">@Model.TotalProductTypes</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="stat-card bg-white rounded-3 shadow-sm p-4 border-start border-warning border-5">
+                <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-warning bg-opacity-10 p-3 rounded-3 me-3">
+                        <i class="bi bi-cart3 text-warning fs-3"></i>
+                    </div>
+                    <div>
+                        <p class="text-muted mb-1">Активни колички</p>
+                        <h3 class="mb-0">@Model.TotalCarts</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="stat-card bg-white rounded-3 shadow-sm p-4 border-start border-info border-5">
+                <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-info bg-opacity-10 p-3 rounded-3 me-3">
+                        <i class="bi bi-people text-info fs-3"></i>
+                    </div>
+                    <div>
+                        <p class="text-muted mb-1">Потребители</p>
+                        <h3 class="mb-0">@Model.TotalClients</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="stat-card bg-white rounded-3 shadow-sm p-4 border-start border-secondary border-5">
+                <div class="d-flex align-items-center">
+                    <div class="stat-icon bg-secondary bg-opacity-10 p-3 rounded-3 me-3">
+                        <i class="bi bi-cash-coin text-secondary fs-3"></i>
+                    </div>
+                    <div>
+                        <p class="text-muted mb-1">Стойност колички</p>
+                        <h3 class="mb-0">@Model.TotalCartValue.ToString("F2") лв.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Management Section -->
+    <div class="row mb-5">
+        <!-- Products Management -->
+        <div class="col-lg-12 mb-4">
+            <div class="management-card bg-white rounded-3 shadow-sm p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+                    <h4 class="mb-0">
+                        <i class="bi bi-box2 text-danger me-2"></i>Управление на части
+                    </h4>
+                    <a asp-controller="Products" asp-action="Index" class="btn btn-sm btn-danger">
+                        <i class="bi bi-plus-circle me-1"></i>Управлявай
+                    </a>
+                </div>
+                @if (Model.RecentProducts.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Име</th>
+                                    <th>Модел</th>
+                                    <th>Цена</th>
+                                    <th>Дата</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var product in Model.RecentProducts)
+                                {
+                                    <tr>
+                                        <td>
+                                            <strong>@product.Name</strong>
+                                        </td>
+                                        <td>
+                                            <span class="badge bg-light text-dark">@product.Models?.ModelName</span>
+                                        </td>
+                                        <td>
+                                            <strong class="text-danger">@product.Price.ToString("F2") лв.</strong>
+                                        </td>
+                                        <td>
+                                            <small class="text-muted">@product.DateRegOn.ToString("dd.MM.yyyy")</small>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm">
+                                                <a asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id" class="btn btn-outline-primary" title="Редактирай">
+                                                    <i class="bi bi-pencil"></i>
+                                                </a>
+                                                <a asp-controller="Products" asp-action="Delete" asp-route-id="@product.Id" class="btn btn-outline-danger" title="Изтрий">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted text-center py-4">Няма части в системата</p>
+                }
+            </div>
+        </div>
+
+        <!-- Models Management -->
+        <div class="col-lg-6 mb-4">
+            <div class="management-card bg-white rounded-3 shadow-sm p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+                    <h5 class="mb-0">
+                        <i class="bi bi-car-front text-primary me-2"></i>Модели
+                    </h5>
+                    <a asp-controller="Models" asp-action="Index" class="btn btn-sm btn-primary">
+                        <i class="bi bi-plus-circle me-1"></i>Управлявай
+                    </a>
+                </div>
+                @if (Model.AllModels.Any())
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var carModel in Model.AllModels.Take(5))
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>@carModel.ModelName</span>
+                                <div class="btn-group btn-group-sm">
+                                    <a asp-controller="Models" asp-action="Edit" asp-route-id="@carModel.Id" class="btn btn-outline-primary btn-sm">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                    <a asp-controller="Models" asp-action="Delete" asp-route-id="@carModel.Id" class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted text-center py-3">Няма модели</p>
+                }
+            </div>
+        </div>
+
+        <!-- Product Types Management -->
+        <div class="col-lg-6 mb-4">
+            <div class="management-card bg-white rounded-3 shadow-sm p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+                    <h5 class="mb-0">
+                        <i class="bi bi-tag text-success me-2"></i>Категории
+                    </h5>
+                    <a asp-controller="ProductTypes" asp-action="Index" class="btn btn-sm btn-success">
+                        <i class="bi bi-plus-circle me-1"></i>Управлявай
+                    </a>
+                </div>
+                @if (Model.AllProductTypes.Any())
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var type in Model.AllProductTypes.Take(5))
+                        {
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>@type.Name</span>
+                                <div class="btn-group btn-group-sm">
+                                    <a asp-controller="ProductTypes" asp-action="Edit" asp-route-id="@type.Id" class="btn btn-outline-success btn-sm">
+                                        <i class="bi bi-pencil"></i>
+                                    </a>
+                                    <a asp-controller="ProductTypes" asp-action="Delete" asp-route-id="@type.Id" class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-trash"></i>
+                                    </a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted text-center py-3">Няма категории</p>
+                }
+            </div>
+        </div>
+
+        <!-- Users Management -->
+        <div class="col-lg-12 mb-4">
+            <div class="management-card bg-white rounded-3 shadow-sm p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom">
+                    <h4 class="mb-0">
+                        <i class="bi bi-people text-info me-2"></i>Управление на потребители
+                    </h4>
+                    <span class="badge bg-info">@Model.TotalClients потребители</span>
+                </div>
+                @if (Model.AllClients.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Потребител</th>
+                                    <th>Имейл</th>
+                                    <th>Телефон</th>
+                                    <th>Регистриран</th>
+                                    <th>Статус</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var client in Model.AllClients)
+                                {
+                                    <tr class="user-row">
+                                        <td>
+                                            <strong class="user-name">@client.FirstName @client.LastName</strong>
+                                            <br />
+                                            <small class="user-username">(@client.UserName)</small>
+                                        </td>
+                                        <td>
+                                            <a href="mailto:@client.Email" class="text-decoration-none">@client.Email</a>
+                                        </td>
+                                        <td>
+                                            @if (!string.IsNullOrEmpty(client.PhoneNumber))
+                                            {
+                                                <a href="tel:@client.PhoneNumber" class="text-decoration-none">@client.PhoneNumber</a>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-muted">-</span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <small class="text-muted">@client.DateJoined?.ToString("dd.MM.yyyy HH:mm")</small>
+                                        </td>
+                                        <td>
+                                            @if (client.EmailConfirmed)
+                                            {
+                                                <span class="badge bg-success">
+                                                    <i class="bi bi-check-circle me-1"></i>Потвърден
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-warning">
+                                                    <i class="bi bi-exclamation-circle me-1"></i>Неподтвърден
+                                                </span>
+                                            }
+                                        </td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm">
+                                                <button type="button" class="btn btn-outline-info" data-bs-toggle="tooltip" title="Преглед детайли">
+                                                    <i class="bi bi-eye"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-outline-warning" data-bs-toggle="tooltip" title="Промени роля">
+                                                    <i class="bi bi-gear"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted text-center py-4">Няма потребители в системата</p>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions -->
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="bg-light rounded-3 p-4">
+                <h5 class="mb-4">
+                    <i class="bi bi-lightning me-2 text-warning"></i>Бързи действия
+                </h5>
+                <div class="row g-2">
+                    <div class="col-md-3">
+                        <a asp-controller="Products" asp-action="Create" class="btn btn-danger w-100">
+                            <i class="bi bi-plus-circle me-2"></i>Нова част
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a asp-controller="Models" asp-action="Create" class="btn btn-primary w-100">
+                            <i class="bi bi-plus-circle me-2"></i>Нов модел
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a asp-controller="ProductTypes" asp-action="Create" class="btn btn-success w-100">
+                            <i class="bi bi-plus-circle me-2"></i>Нова категория
+                        </a>
+                    </div>
+                    <div class="col-md-3">
+                        <a asp-controller="Products" asp-action="Index" class="btn btn-info w-100">
+                            <i class="bi bi-eye me-2"></i>Виж всички части
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .admin-dashboard {
+        padding: 20px;
+    }
+
+    .admin-header {
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    }
+
+    .stat-card {
+        transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .management-card {
+        transition: all 0.3s ease;
+    }
+
+    .management-card:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+    .table thead {
+        background-color: #f8f9fa;
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    .table thead th {
+        font-weight: 600;
+        color: #495057;
+        border: none;
+        padding: 1rem;
+    }
+
+    .table tbody td {
+        padding: 0.875rem 1rem;
+        vertical-align: middle;
+        border-color: #e9ecef;
+    }
+
+    .table tbody tr {
+        transition: all 0.2s ease;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+    .table tbody tr:hover {
+        background-color: #f8f9fa;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .btn-group-sm .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    h1, h4, h5 {
+        color: #212529;
+    }
+
+    .text-warning {
+        color: #ffc107 !important;
+    }
+
+    .badge {
+        font-weight: 500;
+        padding: 0.5rem 0.75rem;
+    }
+
+    a[href^="mailto:"],
+    a[href^="tel:"] {
+        color: #dc3545;
+        text-decoration: none;
+    }
+
+    a[href^="mailto:"]:hover,
+    a[href^="tel:"]:hover {
+        text-decoration: underline;
+        color: #bb2d3b;
+    }
+
+    .list-group-item {
+        border-left: 4px solid transparent;
+        transition: all 0.2s ease;
+    }
+
+    .list-group-item:hover {
+        border-left-color: #dc3545;
+        background-color: #f8f9fa;
+    }
+
+    /* Таблица за потребители */
+    .user-row {
+        border-left: 4px solid transparent;
+    }
+
+    .user-row:hover {
+        border-left-color: #0d6efd;
+    }
+
+    .user-name {
+        font-weight: 600;
+        color: #212529;
+    }
+
+    .user-username {
+        font-size: 0.85rem;
+        color: #6c757d;
+    }
+</style>
+
+<style>
+    @@media (max-width: 768px) {
+        .admin-dashboard {
+            padding: 10px;
+        }
+
+        .table {
+            font-size: 0.875rem;
+        }
+
+        .btn-group-sm {
+            gap: 0.25rem;
+        }
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Update current date
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const currentDate = new Date().toLocaleDateString('bg-BG', options);
+        document.getElementById('current-date').textContent = currentDate;
+    </script>
+}

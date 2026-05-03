@@ -1,0 +1,55 @@
+using Audi_zone.Data;
+using Audi_zone.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace Audi_zone.Areas.Identity.Pages.Admin
+{
+    [Authorize(Roles = "Admin")]
+    public class DashboardModel : PageModel
+    {
+        private readonly ApplicationDbContext _context;
+
+        public DashboardModel(ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public int TotalProducts { get; set; }
+        public int TotalModels { get; set; }
+        public int TotalProductTypes { get; set; }
+        public int TotalCarts { get; set; }
+        public int TotalClients { get; set; }
+        public decimal TotalCartValue { get; set; }
+
+        public List<Product> RecentProducts { get; set; } = new();
+        public List<Model> AllModels { get; set; } = new();
+        public List<ProductType> AllProductTypes { get; set; } = new();
+
+        public void OnGet()
+        {
+            // Получи статистика
+            TotalProducts = _context.Products.Count();
+            TotalModels = _context.Models.Count();
+            TotalProductTypes = _context.ProductTypes.Count();
+            TotalCarts = _context.Carts.Count();
+            TotalClients = _context.Users.Count();
+            TotalCartValue = _context.Carts
+                .Join(_context.Products, 
+                    c => c.ProductId, 
+                    p => p.Id, 
+                    (c, p) => c.Quantity * p.Price)
+                .Sum();
+
+            // Получи последните продукти
+            RecentProducts = _context.Products
+                .OrderByDescending(p => p.DateRegOn)
+                .Take(5)
+                .ToList();
+
+            // Получи всички модели и типове
+            AllModels = _context.Models.ToList();
+            AllProductTypes = _context.ProductTypes.ToList();
+        }
+    }
+}
