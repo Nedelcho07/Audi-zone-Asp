@@ -1,7 +1,8 @@
 @page
 @model LogoutModel
+
 @{
-    ViewData["Title"] = "Изход";
+    ViewData["Title"] = "РР·С…РѕРґ";
 }
 
 <div class="container mt-5 mb-5">
@@ -12,55 +13,32 @@
                     <h3 class="mb-2">
                         <i class="bi bi-car-front-fill me-2"></i>Audi-zone
                     </h3>
-                    <p class="mb-0 text-danger fw-bold">Сигурно излизане от профила</p>
+                    <p class="mb-0 text-danger fw-bold">РЎРёРіСѓСЂРЅРѕ РёР·Р»РёР·Р°РЅРµ РѕС‚ РїСЂРѕС„РёР»Р°</p>
                 </div>
 
                 <div class="card-body p-4 text-center">
                     @if (User.Identity?.IsAuthenticated ?? false)
                     {
-                        <i class="bi bi-box-arrow-right text-danger" style="font-size: 3rem;"></i>
-                        <h4 class="mt-3">Искаш ли да излезеш?</h4>
-                        <p class="text-muted mb-4">Ще трябва да влезеш отново, за да управляваш количката и поръчките си.</p>
+                        <i class="bi bi-box-arrow-right text-danger profile-icon"></i>
+                        <h4 class="mt-3">РСЃРєР°С€ Р»Рё РґР° РёР·Р»РµР·РµС€?</h4>
+                        <p class="text-muted mb-4">Р©Рµ С‚СЂСЏР±РІР° РґР° РІР»РµР·РµС€ РѕС‚РЅРѕРІРѕ, Р·Р° РґР° СѓРїСЂР°РІР»СЏРІР°С€ РєРѕР»РёС‡РєР°С‚Р° Рё РїРѕСЂСЉС‡РєРёС‚Рµ СЃРё.</p>
 
                         <form method="post">
                             <button type="submit" class="btn btn-danger btn-lg px-4 fw-bold">
-                                <i class="bi bi-door-open me-2"></i>Изход
+                                <i class="bi bi-door-open me-2"></i>РР·С…РѕРґ
                             </button>
-                            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-dark btn-lg px-4 ms-2 fw-bold">Отказ</a>
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-outline-dark btn-lg px-4 ms-2 fw-bold">РћС‚РєР°Р·</a>
                         </form>
                     }
                     else
                     {
-                        <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
-                        <h4 class="mt-3">Успешно излязохте от профила</h4>
-                        <p class="text-muted mb-4">Благодарим, че използвате Audi-zone.</p>
-                        <a asp-controller="Home" asp-action="Index" class="btn btn-dark px-4 fw-bold">Към началната страница</a>
+                        <i class="bi bi-check-circle text-success profile-icon"></i>
+                        <h4 class="mt-3">РЈСЃРїРµС€РЅРѕ РёР·Р»СЏР·РѕС…С‚Рµ РѕС‚ РїСЂРѕС„РёР»Р°</h4>
+                        <p class="text-muted mb-4">Р‘Р»Р°РіРѕРґР°СЂРёРј, С‡Рµ РёР·РїРѕР»Р·РІР°С‚Рµ Audi-zone.</p>
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-dark px-4 fw-bold">РљСЉРј РЅР°С‡Р°Р»РЅР°С‚Р° СЃС‚СЂР°РЅРёС†Р°</a>
                     }
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    .border-bottom-danger {
-        border-bottom: 4px solid #dc3545 !important;
-    }
-
-    .card {
-        border-radius: 12px;
-    }
-
-    .btn-danger:hover {
-        background-color: #bb2d3b;
-        border-color: #bb2d3b;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(187, 45, 59, 0.3);
-    }
-
-    .btn-outline-dark:hover,
-    .btn-dark:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(33, 37, 41, 0.2);
-    }
-</style>

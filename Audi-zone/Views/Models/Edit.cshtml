@@ -1,37 +1,33 @@
-﻿@model Audi_zone.Models.Model
+@model Audi_zone.Models.Model
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Редакция на модел";
 }
 
-<h1>Edit</h1>
+<div class="page-heading mb-4">
+    <span class="eyebrow">Админ</span>
+    <h1 class="h2 mb-1">Редакция на модел</h1>
+    <p class="text-muted mb-0">Обновяване на името на избрания модел.</p>
+</div>
 
-<h4>Model</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="ModelName" class="control-label"></label>
+<div class="surface p-4 admin-form">
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id" />
+        <div class="row g-3">
+            <div class="col-md-8">
+                <label asp-for="ModelName" class="form-label fw-bold">Име на модел</label>
                 <input asp-for="ModelName" class="form-control" />
                 <span asp-validation-for="ModelName" class="text-danger"></span>
             </div>
-            @* <div class="form-group">
-                <label asp-for="DateRegOn" class="control-label"></label>
-                <input asp-for="DateRegOn" class="form-control" />
-                <span asp-validation-for="DateRegOn" class="text-danger"></span>
-            </div> *@
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-danger">
+                <i class="bi bi-check2-circle me-2"></i>Запази
+            </button>
+            <a asp-action="Index" class="btn btn-outline-dark">Назад</a>
+        </div>
+    </form>
 </div>
 
 @section Scripts {

@@ -1,82 +1,99 @@
-﻿@model Audi_zone.Models.Product
+@model Audi_zone.Models.Product
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.Name;
+    var productImage = string.IsNullOrWhiteSpace(Model.ImageURL)
+        ? "https://via.placeholder.com/700x520?text=Audi+Part"
+        : Model.ImageURL;
+    var description = string.IsNullOrWhiteSpace(Model.Description)
+        ? "Няма добавено описание за този продукт."
+        : Model.Description;
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Product</h4>
-    <hr />
-    <div class="row">
-        <div class="col-md-4">
-            <img src="@(string.IsNullOrEmpty(Model.ImageURL) ? "https://via.placeholder.com/400x400?text=Audi+Part" : Model.ImageURL)" 
-                 alt="@Model.Name" class="img-fluid rounded" style="width: 100%; height: 400px; object-fit: cover;">
-        </div>
-        <div class="col-md-8">
-            <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Code)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Code)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Models)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Models.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageURL)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DateRegOn)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DateRegOn)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductTypes)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ProductTypes.Id)
-        </dd>
-        </dl>
-        </div>
+<div class="page-heading d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+    <div>
+        <span class="eyebrow">Детайли за продукт</span>
+        <h1 class="h2 mb-1">@Model.Name</h1>
+        <p class="text-muted mb-0">Код: @Model.Code</p>
     </div>
+    <a asp-action="Index" class="btn btn-outline-dark">
+        <i class="bi bi-arrow-left me-2"></i>Назад към частите
+    </a>
 </div>
-<div class="mt-4">
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-    <form asp-controller="Carts" asp-action="Create" method="post">
-        <input type ="hidden" name="ProductId" value="@Model.Id" />
-        <label for="quantity">Количество: </label>
-        <input type="number" id="quantity" name="Quantity" value="1" min="1" />
-        <button type ="submit" > 
-            Добави в количката 
-        </button>
-    </form> 
+
+<div class="row g-4 product-details">
+    <div class="col-lg-5">
+        <section class="surface product-media-panel">
+            <img src="@productImage" alt="@Model.Name" class="product-detail-image" />
+            <div class="product-meta-strip">
+                <span><i class="bi bi-car-front text-danger me-2"></i>@Model.Models?.ModelName</span>
+                <span><i class="bi bi-tag text-danger me-2"></i>@Model.ProductTypes?.Name</span>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-7">
+        <section class="surface product-info-panel">
+            <div class="d-flex justify-content-between align-items-start flex-wrap gap-3">
+                <div>
+                    <span class="status-pill status-success">
+                        <i class="bi bi-check-circle me-1"></i>Налично за поръчка
+                    </span>
+                    <h2 class="product-title mt-3 mb-2">@Model.Name</h2>
+                    <p class="text-muted mb-0">@Model.ProductTypes?.Name за @Model.Models?.ModelName</p>
+                </div>
+                <div class="product-price">@Model.Price.ToString("F2") лв.</div>
+            </div>
+
+            <div class="detail-stat-grid">
+                <div class="detail-stat">
+                    <span>Код</span>
+                    <strong>@Model.Code</strong>
+                </div>
+                <div class="detail-stat">
+                    <span>Модел</span>
+                    <strong>@Model.Models?.ModelName</strong>
+                </div>
+                <div class="detail-stat">
+                    <span>Категория</span>
+                    <strong>@Model.ProductTypes?.Name</strong>
+                </div>
+                <div class="detail-stat">
+                    <span>Добавен</span>
+                    <strong>@Model.DateRegOn.ToString("dd.MM.yyyy")</strong>
+                </div>
+            </div>
+
+            <div class="section-divider"></div>
+
+            <div class="product-description">
+                <div class="section-title">Описание</div>
+                <p>@description</p>
+            </div>
+
+            <form asp-controller="Carts" asp-action="Create" method="post" class="purchase-panel">
+                @Html.AntiForgeryToken()
+                <input type="hidden" name="ProductId" value="@Model.Id" />
+                <div class="quantity-control">
+                    <label for="quantity" class="form-label mb-1">Количество</label>
+                    <input type="number" id="quantity" name="Quantity" value="1" min="1" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-danger btn-lg">
+                    <i class="bi bi-cart-plus me-2"></i>Добави в количката
+                </button>
+            </form>
+
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="admin-actions">
+                    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-dark">
+                        <i class="bi bi-pencil me-2"></i>Редактирай
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-outline-danger">
+                        <i class="bi bi-trash me-2"></i>Изтрий
+                    </a>
+                </div>
+            }
+        </section>
+    </div>
 </div>

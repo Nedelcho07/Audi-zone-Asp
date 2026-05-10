@@ -1,41 +1,50 @@
-﻿@model IEnumerable<Audi_zone.Models.Model>
+@model IEnumerable<Audi_zone.Models.Model>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Модели";
 }
 
-<h1>Index</h1>
+<div class="page-heading d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+    <div>
+        <span class="eyebrow">Админ</span>
+        <h1 class="h2 mb-1">Модели Audi</h1>
+        <p class="text-muted mb-0">Управление на автомобилните модели в каталога.</p>
+    </div>
+    <a asp-action="Create" class="btn btn-danger">
+        <i class="bi bi-plus-circle me-2"></i>Нов модел
+    </a>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ModelName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateRegOn)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ModelName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateRegOn)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="surface table-responsive">
+    <table class="table table-modern align-middle mb-0">
+        <thead>
+            <tr>
+                <th>Модел</th>
+                <th>Дата</th>
+                <th class="text-end">Действия</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="fw-bold">@item.ModelName</td>
+                    <td>@item.DateRegOn.ToString("dd.MM.yyyy")</td>
+                    <td class="text-end">
+                        <div class="btn-group btn-group-sm">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark" title="Редактирай">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary" title="Детайли">
+                                <i class="bi bi-eye"></i>
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger" title="Изтрий">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Audi_zone.Data;
 using Audi_zone.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Audi_zone.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductTypesController : Controller
     {
         private readonly ApplicationDbContext _context;

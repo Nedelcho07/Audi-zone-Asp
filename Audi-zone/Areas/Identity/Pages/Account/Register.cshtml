@@ -2,170 +2,148 @@
 @model RegisterModel
 
 @{
-    ViewData["Title"] = "Регистрирайте се";
+    ViewData["Title"] = "Р РµРіРёСЃС‚СЂРёСЂР°Р№С‚Рµ СЃРµ";
 }
 
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-7">
-            <!-- Register Card -->
             <div class="card shadow-lg border-0">
-                <!-- Card Header with Brand -->
                 <div class="card-header bg-dark text-white text-center py-4 border-bottom-danger">
                     <h3 class="mb-2">
                         <i class="bi bi-car-front-fill me-2"></i>Audi-zone
                     </h3>
-                    <p class="mb-0 text-danger fw-bold">Създай нов профил</p>
+                    <p class="mb-0 text-danger fw-bold">РЎСЉР·РґР°Р№ РЅРѕРІ РїСЂРѕС„РёР»</p>
                 </div>
 
-                <!-- Card Body - Form -->
                 <div class="card-body p-4">
-                    <!-- Validation Summary -->
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade show" role="alert">
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        <strong><i class="bi bi-exclamation-circle me-2"></i>Грешка при регистрация!</strong>
+                        <strong><i class="bi bi-exclamation-circle me-2"></i>Р“СЂРµС€РєР° РїСЂРё СЂРµРіРёСЃС‚СЂР°С†РёСЏ!</strong>
                     </div>
 
                     <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
                         <div class="row">
-                            <!-- Username Field -->
                             <div class="col-md-12 mb-3">
                                 <label asp-for="Input.UserName" class="form-label fw-bold">
-                                    <i class="bi bi-person me-2 text-danger"></i>Потребителско име
+                                    <i class="bi bi-person me-2 text-danger"></i>РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ
                                 </label>
-                                <input asp-for="Input.UserName" 
-                                       class="form-control form-control-lg border-2" 
-                                       autocomplete="username" 
-                                       aria-required="true" 
-                                       placeholder="Уникално потребителско име" 
-                                       style="border-color: #dee2e6;" />
+                                <input asp-for="Input.UserName"
+                                       class="form-control form-control-lg border-2"
+                                       autocomplete="username"
+                                       aria-required="true"
+                                       placeholder="РЈРЅРёРєР°Р»РЅРѕ РїРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ" />
                                 <span asp-validation-for="Input.UserName" class="text-danger small mt-1 d-block"></span>
                             </div>
 
-                            <!-- First Name Field -->
                             <div class="col-md-6 mb-3">
                                 <label asp-for="Input.FirstName" class="form-label fw-bold">
-                                    <i class="bi bi-person-fill me-2 text-danger"></i>Име
+                                    <i class="bi bi-person-fill me-2 text-danger"></i>РРјРµ
                                 </label>
-                                <input asp-for="Input.FirstName" 
-                                       class="form-control form-control-lg border-2" 
-                                       autocomplete="given-name" 
-                                       aria-required="true" 
-                                       placeholder="Твоето име" 
-                                       style="border-color: #dee2e6;" />
+                                <input asp-for="Input.FirstName"
+                                       class="form-control form-control-lg border-2"
+                                       autocomplete="given-name"
+                                       aria-required="true"
+                                       placeholder="РўРІРѕРµС‚Рѕ РёРјРµ" />
                                 <span asp-validation-for="Input.FirstName" class="text-danger small mt-1 d-block"></span>
                             </div>
 
-                            <!-- Last Name Field -->
                             <div class="col-md-6 mb-3">
                                 <label asp-for="Input.LastName" class="form-label fw-bold">
-                                    <i class="bi bi-person-fill me-2 text-danger"></i>Фамилия
+                                    <i class="bi bi-person-fill me-2 text-danger"></i>Р¤Р°РјРёР»РёСЏ
                                 </label>
-                                <input asp-for="Input.LastName" 
-                                       class="form-control form-control-lg border-2" 
-                                       autocomplete="family-name" 
-                                       aria-required="true" 
-                                       placeholder="Твоята фамилия" 
-                                       style="border-color: #dee2e6;" />
+                                <input asp-for="Input.LastName"
+                                       class="form-control form-control-lg border-2"
+                                       autocomplete="family-name"
+                                       aria-required="true"
+                                       placeholder="РўРІРѕСЏС‚Р° С„Р°РјРёР»РёСЏ" />
                                 <span asp-validation-for="Input.LastName" class="text-danger small mt-1 d-block"></span>
                             </div>
                         </div>
 
-                        <!-- Email Field -->
                         <div class="mb-3">
                             <label asp-for="Input.Email" class="form-label fw-bold">
-                                <i class="bi bi-envelope me-2 text-danger"></i>Имейл
+                                <i class="bi bi-envelope me-2 text-danger"></i>РРјРµР№Р»
                             </label>
-                            <input asp-for="Input.Email" 
-                                   class="form-control form-control-lg border-2" 
-                                   autocomplete="email" 
-                                   aria-required="true" 
-                                   placeholder="твоя.имейл@example.com" 
-                                   type="email" 
-                                   style="border-color: #dee2e6;" />
+                            <input asp-for="Input.Email"
+                                   class="form-control form-control-lg border-2"
+                                   autocomplete="email"
+                                   aria-required="true"
+                                   placeholder="С‚РІРѕСЏ.РёРјРµР№Р»@example.com"
+                                   type="email" />
                             <span asp-validation-for="Input.Email" class="text-danger small mt-1 d-block"></span>
                         </div>
 
-                        <!-- Phone Number Field -->
                         <div class="mb-3">
                             <label asp-for="Input.PhoneNumber" class="form-label fw-bold">
-                                <i class="bi bi-telephone me-2 text-danger"></i>Телефонен номер
+                                <i class="bi bi-telephone me-2 text-danger"></i>РўРµР»РµС„РѕРЅРµРЅ РЅРѕРјРµСЂ
                             </label>
-                            <input asp-for="Input.PhoneNumber" 
-                                   class="form-control form-control-lg border-2" 
-                                   autocomplete="tel" 
-                                   aria-required="true" 
-                                   placeholder="0888888888" 
-                                   type="tel" 
-                                   style="border-color: #dee2e6;" />
+                            <input asp-for="Input.PhoneNumber"
+                                   class="form-control form-control-lg border-2"
+                                   autocomplete="tel"
+                                   aria-required="true"
+                                   placeholder="0888888888"
+                                   type="tel" />
                             <span asp-validation-for="Input.PhoneNumber" class="text-danger small mt-1 d-block"></span>
                         </div>
 
-                        <!-- Password Field -->
                         <div class="mb-3">
                             <label asp-for="Input.Password" class="form-label fw-bold">
-                                <i class="bi bi-lock me-2 text-danger"></i>Парола
+                                <i class="bi bi-lock me-2 text-danger"></i>РџР°СЂРѕР»Р°
                             </label>
-                            <input asp-for="Input.Password" 
-                                   class="form-control form-control-lg border-2" 
-                                   autocomplete="new-password" 
-                                   aria-required="true" 
-                                   placeholder="Въведи силна парола" 
-                                   type="password" 
-                                   style="border-color: #dee2e6;" />
+                            <input asp-for="Input.Password"
+                                   class="form-control form-control-lg border-2"
+                                   autocomplete="new-password"
+                                   aria-required="true"
+                                   placeholder="Р’СЉРІРµРґРё СЃРёР»РЅР° РїР°СЂРѕР»Р°"
+                                   type="password" />
                             <small class="text-muted d-block mt-1">
-                                <i class="bi bi-info-circle me-1"></i>Минимум 6 символа, с число и специален знак
+                                <i class="bi bi-info-circle me-1"></i>РњРёРЅРёРјСѓРј 6 СЃРёРјРІРѕР»Р°, СЃ С‡РёСЃР»Рѕ Рё СЃРїРµС†РёР°Р»РµРЅ Р·РЅР°Рє
                             </small>
                             <span asp-validation-for="Input.Password" class="text-danger small mt-1 d-block"></span>
                         </div>
 
-                        <!-- Confirm Password Field -->
                         <div class="mb-4">
                             <label asp-for="Input.ConfirmPassword" class="form-label fw-bold">
-                                <i class="bi bi-lock-fill me-2 text-danger"></i>Потвърди парола
+                                <i class="bi bi-lock-fill me-2 text-danger"></i>РџРѕС‚РІСЉСЂРґРё РїР°СЂРѕР»Р°
                             </label>
-                            <input asp-for="Input.ConfirmPassword" 
-                                   class="form-control form-control-lg border-2" 
-                                   autocomplete="new-password" 
-                                   aria-required="true" 
-                                   placeholder="Повтори паролата" 
-                                   type="password" 
-                                   style="border-color: #dee2e6;" />
+                            <input asp-for="Input.ConfirmPassword"
+                                   class="form-control form-control-lg border-2"
+                                   autocomplete="new-password"
+                                   aria-required="true"
+                                   placeholder="РџРѕРІС‚РѕСЂРё РїР°СЂРѕР»Р°С‚Р°"
+                                   type="password" />
                             <span asp-validation-for="Input.ConfirmPassword" class="text-danger small mt-1 d-block"></span>
                         </div>
 
-                        <!-- Submit Button -->
                         <button id="registerSubmit" type="submit" class="btn btn-danger btn-lg w-100 fw-bold mb-3">
-                            <i class="bi bi-person-plus me-2"></i>Създай профил
+                            <i class="bi bi-person-plus me-2"></i>РЎСЉР·РґР°Р№ РїСЂРѕС„РёР»
                         </button>
 
-                        <!-- Divider -->
                         <hr class="my-4">
 
-                        <!-- Login Section -->
                         <div class="text-center">
-                            <p class="text-muted mb-2">Вече имаш профил?</p>
+                            <p class="text-muted mb-2">Р’РµС‡Рµ РёРјР°С€ РїСЂРѕС„РёР»?</p>
                             <a asp-page="./Login" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-outline-dark fw-bold">
-                                <i class="bi bi-box-arrow-in-right me-2"></i>Влез в профила
+                                <i class="bi bi-box-arrow-in-right me-2"></i>Р’Р»РµР· РІ РїСЂРѕС„РёР»Р°
                             </a>
                         </div>
                     </form>
                 </div>
 
-                <!-- External Register Section -->
                 @if ((Model.ExternalLogins?.Count ?? 0) > 0)
                 {
                     <div class="card-footer bg-light">
                         <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                            <p class="text-center text-muted mb-3 small">Или регистрирай се чрез</p>
+                            <p class="text-center text-muted mb-3 small">РР»Рё СЂРµРіРёСЃС‚СЂРёСЂР°Р№ СЃРµ С‡СЂРµР·</p>
                             <div class="d-grid gap-2">
                                 @foreach (var provider in Model.ExternalLogins!)
                                 {
-                                    <button type="submit" 
-                                            class="btn btn-outline-secondary" 
-                                            name="provider" 
-                                            value="@provider.Name" 
-                                            title="Регистрирай се с @provider.DisplayName">
+                                    <button type="submit"
+                                            class="btn btn-outline-secondary"
+                                            name="provider"
+                                            value="@provider.Name"
+                                            title="Р РµРіРёСЃС‚СЂРёСЂР°Р№ СЃРµ СЃ @provider.DisplayName">
                                         <i class="bi bi-globe me-2"></i>@provider.DisplayName
                                     </button>
                                 }
@@ -175,77 +153,21 @@
                 }
             </div>
 
-            <!-- Info Section -->
             <div class="mt-4 p-4 bg-light rounded-3 border-start border-danger border-5">
                 <h6 class="fw-bold text-dark mb-3">
-                    <i class="bi bi-shield-check text-danger me-2"></i>Защо да се регистрираш?
+                    <i class="bi bi-shield-check text-danger me-2"></i>Р—Р°С‰Рѕ РґР° СЃРµ СЂРµРіРёСЃС‚СЂРёСЂР°С€?
                 </h6>
                 <ul class="small text-muted mb-0">
-                    <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>Безопасност:</strong> Защитени данни и сигурни покупки</li>
-                    <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>Проследяване:</strong> Виж статуса на твоите поръчки</li>
-                    <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>Препоръки:</strong> Персонализирани предложения</li>
-                    <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>История:</strong> Всички твои покупки на едно място</li>
-                    <li><i class="bi bi-check-circle text-danger me-2"></i><strong>Поддръжка:</strong> Достъп до помощ и консултации</li>
+                    <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>Р‘РµР·РѕРїР°СЃРЅРѕСЃС‚:</strong> Р—Р°С‰РёС‚РµРЅРё РґР°РЅРЅРё Рё СЃРёРіСѓСЂРЅРё РїРѕРєСѓРїРєРё</li>
+                    <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>РџСЂРѕСЃР»РµРґСЏРІР°РЅРµ:</strong> Р’РёР¶ СЃС‚Р°С‚СѓСЃР° РЅР° С‚РІРѕРёС‚Рµ РїРѕСЂСЉС‡РєРё</li>
+                    <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>РџСЂРµРїРѕСЂСЉРєРё:</strong> РџРµСЂСЃРѕРЅР°Р»РёР·РёСЂР°РЅРё РїСЂРµРґР»РѕР¶РµРЅРёСЏ</li>
+                    <li class="mb-2"><i class="bi bi-check-circle text-danger me-2"></i><strong>РСЃС‚РѕСЂРёСЏ:</strong> Р’СЃРёС‡РєРё С‚РІРѕРё РїРѕРєСѓРїРєРё РЅР° РµРґРЅРѕ РјСЏСЃС‚Рѕ</li>
+                    <li><i class="bi bi-check-circle text-danger me-2"></i><strong>РџРѕРґРґСЂСЉР¶РєР°:</strong> Р”РѕСЃС‚СЉРї РґРѕ РїРѕРјРѕС‰ Рё РєРѕРЅСЃСѓР»С‚Р°С†РёРё</li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    .border-bottom-danger {
-        border-bottom: 4px solid #dc3545 !important;
-    }
-
-    .form-control:focus {
-        border-color: #dc3545 !important;
-        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
-    }
-
-    .card {
-        border-radius: 12px;
-    }
-
-    .btn-danger:hover {
-        background-color: #bb2d3b;
-        border-color: #bb2d3b;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(187, 45, 59, 0.3);
-    }
-
-    .btn-outline-dark:hover {
-        background-color: #212529;
-        border-color: #212529;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(33, 37, 41, 0.2);
-    }
-
-    .btn-outline-secondary:hover {
-        background-color: #6c757d;
-        border-color: #6c757d;
-        transform: translateY(-2px);
-    }
-
-    a {
-        transition: all 0.3s ease;
-    }
-
-    a:hover {
-        text-decoration: underline !important;
-    }
-
-    .text-danger {
-        color: #dc3545 !important;
-    }
-
-    .form-control {
-        transition: all 0.3s ease;
-    }
-
-    .form-control::placeholder {
-        color: #6c757d;
-    }
-</style>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

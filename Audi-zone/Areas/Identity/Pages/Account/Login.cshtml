@@ -2,103 +2,85 @@
 @model LoginModel
 
 @{
-    ViewData["Title"] = "Влез в профила";
+    ViewData["Title"] = "Р’Р»РµР· РІ РїСЂРѕС„РёР»Р°";
 }
 
 <div class="container mt-5 mb-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <!-- Login Card -->
             <div class="card shadow-lg border-0">
-                <!-- Card Header with Brand -->
                 <div class="card-header bg-dark text-white text-center py-4 border-bottom-danger">
                     <h3 class="mb-2">
                         <i class="bi bi-car-front-fill me-2"></i>Audi-zone
                     </h3>
-                    <p class="mb-0 text-danger fw-bold">Влезте в своя профил</p>
+                    <p class="mb-0 text-danger fw-bold">Р’Р»РµР·С‚Рµ РІ СЃРІРѕСЏ РїСЂРѕС„РёР»</p>
                 </div>
 
-                <!-- Card Body - Form -->
                 <div class="card-body p-4">
-                    <!-- Validation Summary -->
                     <div asp-validation-summary="ModelOnly" class="alert alert-danger alert-dismissible fade show" role="alert">
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        <strong><i class="bi bi-exclamation-circle me-2"></i>Грешка при влизане!</strong>
+                        <strong><i class="bi bi-exclamation-circle me-2"></i>Р“СЂРµС€РєР° РїСЂРё РІР»РёР·Р°РЅРµ!</strong>
                     </div>
 
                     <form id="account" method="post">
-                        <!-- Username Field -->
                         <div class="mb-3">
                             <label asp-for="Input.UserName" class="form-label fw-bold">
-                                <i class="bi bi-person me-2 text-danger"></i>Потребителско име
+                                <i class="bi bi-person me-2 text-danger"></i>РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ
                             </label>
-                            <input asp-for="Input.UserName" 
-                                   class="form-control form-control-lg border-2" 
-                                   autocomplete="username" 
-                                   aria-required="true" 
-                                   placeholder="Въведи потребителското си име" 
-                                   style="border-color: #dee2e6;" />
+                            <input asp-for="Input.UserName"
+                                   class="form-control form-control-lg border-2"
+                                   autocomplete="username"
+                                   aria-required="true"
+                                   placeholder="Р’СЉРІРµРґРё РїРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕС‚Рѕ СЃРё РёРјРµ" />
                             <span asp-validation-for="Input.UserName" class="text-danger small mt-1 d-block"></span>
                         </div>
 
-                        <!-- Password Field -->
                         <div class="mb-3">
                             <label asp-for="Input.Password" class="form-label fw-bold">
-                                <i class="bi bi-lock me-2 text-danger"></i>Парола
+                                <i class="bi bi-lock me-2 text-danger"></i>РџР°СЂРѕР»Р°
                             </label>
-                            <input asp-for="Input.Password" 
-                                   class="form-control form-control-lg border-2" 
-                                   autocomplete="current-password" 
-                                   aria-required="true" 
-                                   placeholder="Въведи своята парола" 
-                                   type="password" 
-                                   style="border-color: #dee2e6;" />
+                            <input asp-for="Input.Password"
+                                   class="form-control form-control-lg border-2"
+                                   autocomplete="current-password"
+                                   aria-required="true"
+                                   placeholder="Р’СЉРІРµРґРё СЃРІРѕСЏС‚Р° РїР°СЂРѕР»Р°"
+                                   type="password" />
                             <span asp-validation-for="Input.Password" class="text-danger small mt-1 d-block"></span>
                         </div>
 
-                        <!-- Remember Me Checkbox -->
                         <div class="form-check mb-4">
                             <input class="form-check-input" type="checkbox" asp-for="Input.RememberMe" id="rememberMe">
-                            <label class="form-check-label" for="rememberMe">
-                                Запомни ме
-                            </label>
+                            <label class="form-check-label" for="rememberMe">Р—Р°РїРѕРјРЅРё РјРµ</label>
                         </div>
 
-                        <!-- Submit Button -->
                         <button id="login-submit" type="submit" class="btn btn-danger btn-lg w-100 fw-bold mb-3">
-                            <i class="bi bi-box-arrow-in-right me-2"></i>Влез
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Р’Р»РµР·
                         </button>
 
-
-                        <!-- Divider -->
                         <hr class="my-4">
 
-                        <!-- Register Section -->
                         <div class="text-center mb-3">
-                            <p class="text-muted mb-2">Нямаш профил?</p>
+                            <p class="text-muted mb-2">РќСЏРјР°С€ РїСЂРѕС„РёР»?</p>
                             <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-outline-dark fw-bold">
-                                <i class="bi bi-person-plus me-2"></i>Създай профил
+                                <i class="bi bi-person-plus me-2"></i>РЎСЉР·РґР°Р№ РїСЂРѕС„РёР»
                             </a>
                         </div>
-
-                      
                     </form>
                 </div>
 
-                <!-- External Login Section -->
                 @if ((Model.ExternalLogins?.Count ?? 0) > 0)
                 {
                     <div class="card-footer bg-light">
                         <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-                            <p class="text-center text-muted mb-3 small">Или влез чрез</p>
+                            <p class="text-center text-muted mb-3 small">РР»Рё РІР»РµР· С‡СЂРµР·</p>
                             <div class="d-grid gap-2">
                                 @foreach (var provider in Model.ExternalLogins!)
                                 {
-                                    <button type="submit" 
-                                            class="btn btn-outline-secondary" 
-                                            name="provider" 
-                                            value="@provider.Name" 
-                                            title="Влез с @provider.DisplayName">
+                                    <button type="submit"
+                                            class="btn btn-outline-secondary"
+                                            name="provider"
+                                            value="@provider.Name"
+                                            title="Р’Р»РµР· СЃ @provider.DisplayName">
                                         <i class="bi bi-globe me-2"></i>@provider.DisplayName
                                     </button>
                                 }
@@ -108,68 +90,20 @@
                 }
             </div>
 
-            <!-- Info Section -->
             <div class="mt-4 p-4 bg-light rounded-3 border-start border-danger border-5">
                 <h6 class="fw-bold text-dark mb-2">
-                    <i class="bi bi-info-circle text-danger me-2"></i>Защо да се регистрираш?
+                    <i class="bi bi-info-circle text-danger me-2"></i>Р—Р°С‰Рѕ РґР° СЃРµ СЂРµРіРёСЃС‚СЂРёСЂР°С€?
                 </h6>
                 <ul class="small text-muted mb-0">
-                    <li><i class="bi bi-check-circle text-danger me-2"></i>Безопасни покупки</li>
-                    <li><i class="bi bi-check-circle text-danger me-2"></i>Проследяване на поръчки</li>
-                    <li><i class="bi bi-check-circle text-danger me-2"></i>Персонализирани препоръки</li>
-                    <li><i class="bi bi-check-circle text-danger me-2"></i>История на покупките</li>
+                    <li><i class="bi bi-check-circle text-danger me-2"></i>Р‘РµР·РѕРїР°СЃРЅРё РїРѕРєСѓРїРєРё</li>
+                    <li><i class="bi bi-check-circle text-danger me-2"></i>РџСЂРѕСЃР»РµРґСЏРІР°РЅРµ РЅР° РїРѕСЂСЉС‡РєРё</li>
+                    <li><i class="bi bi-check-circle text-danger me-2"></i>РџРµСЂСЃРѕРЅР°Р»РёР·РёСЂР°РЅРё РїСЂРµРїРѕСЂСЉРєРё</li>
+                    <li><i class="bi bi-check-circle text-danger me-2"></i>РСЃС‚РѕСЂРёСЏ РЅР° РїРѕРєСѓРїРєРёС‚Рµ</li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    .border-bottom-danger {
-        border-bottom: 4px solid #dc3545 !important;
-    }
-
-    .form-control:focus {
-        border-color: #dc3545 !important;
-        box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
-    }
-
-    .card {
-        border-radius: 12px;
-    }
-
-    .btn-danger:hover {
-        background-color: #bb2d3b;
-        border-color: #bb2d3b;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(187, 45, 59, 0.3);
-    }
-
-    .btn-outline-dark:hover {
-        background-color: #212529;
-        border-color: #212529;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(33, 37, 41, 0.2);
-    }
-
-    .btn-outline-secondary:hover {
-        background-color: #6c757d;
-        border-color: #6c757d;
-        transform: translateY(-2px);
-    }
-
-    a {
-        transition: all 0.3s ease;
-    }
-
-    a:hover {
-        text-decoration: underline !important;
-    }
-
-    .text-danger {
-        color: #dc3545 !important;
-    }
-</style>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

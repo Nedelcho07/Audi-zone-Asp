@@ -37,6 +37,43 @@ namespace Audi_zone.Controllers
             return View(await applicationDbContext.ToListAsync());
         }
 
+        public async Task<IActionResult> Orders()
+        {
+            var currentUserId = _userManager.GetUserId(User);
+
+            var orders = await _context.Orders
+                .Where(o => o.ClientId == currentUserId)
+                .OrderByDescending(o => o.OrderedOn)
+                .ToListAsync();
+
+            return View(orders);
+        }
+
+        public async Task<IActionResult> OrderDetails(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var order = await _context.Orders
+                .Include(o => o.Client)
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            var currentUserId = _userManager.GetUserId(User);
+            if (!User.IsInRole("Admin") && order.ClientId != currentUserId)
+            {
+                return Forbid();
+            }
+
+            return View(order);
+        }
+
         // GET: Carts/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -75,7 +112,13 @@ namespace Audi_zone.Controllers
         public async Task<IActionResult> Create([Bind("Id,ProductId,Quantity")] Cart cart)
         {
             cart.DataRegOn = DateTime.Now;
-            cart.ClientId = _userManager.GetUserId(User);
+            var currentUserId = _userManager.GetUserId(User);
+            if (string.IsNullOrEmpty(currentUserId))
+            {
+                return Challenge();
+            }
+
+            cart.ClientId = currentUserId;
 
             ModelState.Remove(nameof(Cart.ClientId));
             ModelState.Remove(nameof(Cart.Clients));
@@ -214,6 +257,10 @@ namespace Audi_zone.Controllers
         public async Task<IActionResult> PlaceOrder()
         {
             var currentUserId = _userManager.GetUserId(User);
+            if (string.IsNullOrEmpty(currentUserId))
+            {
+                return Challenge();
+            }
 
             var cartItems = await _context.Carts
                 .Where(c => c.ClientId == currentUserId)
@@ -226,6 +273,18 @@ namespace Audi_zone.Controllers
                 return RedirectToAction(nameof(Index));
             }
             TempData["OrderMessage"] = "Поръчката е приета успешно!";
+
+            var orderedItems = string.Join(Environment.NewLine, cartItems.Select(c =>
+                $"{c.Products.Name} x {c.Quantity} - {(c.Quantity * c.Products.Price):F2} лв."));
+            var totalPrice = cartItems.Sum(c => c.Quantity * c.Products.Price);
+
+            _context.Orders.Add(new Order
+            {
+                ClientId = currentUserId,
+                OrderedItems = orderedItems,
+                TotalPrice = totalPrice,
+                OrderedOn = DateTime.Now
+            });
 
             _context.Carts.RemoveRange(cartItems);
             await _context.SaveChangesAsync();

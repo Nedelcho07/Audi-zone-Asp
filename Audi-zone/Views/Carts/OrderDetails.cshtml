@@ -1,0 +1,62 @@
+@model Audi_zone.Models.Order
+
+@{
+    ViewData["Title"] = $"Поръчка #{Model.Id}";
+}
+
+<div class="page-heading d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+    <div>
+        <span class="eyebrow">Поръчка</span>
+        <h1 class="h2 mb-1">Поръчка #@Model.Id</h1>
+        <p class="text-muted mb-0">@Model.OrderedOn.ToString("dd.MM.yyyy HH:mm")</p>
+    </div>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-area="Identity" asp-page="/Admin/Dashboard" class="btn btn-outline-dark">
+            <i class="bi bi-arrow-left me-2"></i>Към админ панела
+        </a>
+    }
+    else
+    {
+        <a asp-action="Orders" class="btn btn-outline-dark">
+            <i class="bi bi-arrow-left me-2"></i>Назад
+        </a>
+    }
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <section class="surface p-4">
+            <div class="section-title">
+                <i class="bi bi-bag-check text-danger me-2"></i>
+                Артикули
+            </div>
+            <div class="order-items mt-3">@Model.OrderedItems</div>
+        </section>
+    </div>
+
+    <div class="col-lg-4">
+        <aside class="surface p-4">
+            <div class="section-title">Обобщение</div>
+            <div class="summary-row">
+                <span>Номер</span>
+                <strong>#@Model.Id</strong>
+            </div>
+            <div class="summary-row">
+                <span>Дата</span>
+                <strong>@Model.OrderedOn.ToString("dd.MM.yyyy")</strong>
+            </div>
+            @if (User.IsInRole("Admin"))
+            {
+                <div class="summary-row">
+                    <span>Клиент</span>
+                    <strong>@(Model.Client?.Email ?? Model.ClientId)</strong>
+                </div>
+            }
+            <div class="summary-total">
+                <span>Общо</span>
+                <strong>@Model.TotalPrice.ToString("F2") лв.</strong>
+            </div>
+        </aside>
+    </div>
+</div>

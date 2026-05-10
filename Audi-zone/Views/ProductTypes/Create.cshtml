@@ -1,36 +1,37 @@
-﻿@model Audi_zone.Models.ProductType
+@model Audi_zone.Models.ProductType
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Нова категория";
 }
 
-<h1>Create</h1>
+<div class="page-heading mb-4">
+    <span class="eyebrow">Админ</span>
+    <h1 class="h2 mb-1">Нова категория</h1>
+    <p class="text-muted mb-0">Добавяне на тип продукт към каталога.</p>
+</div>
 
-<h4>ProductType</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+<div class="surface p-4 admin-form">
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row g-3">
+            <div class="col-md-8">
+                <label asp-for="Name" class="form-label fw-bold">Име</label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DateRegOn" class="control-label"></label>
+            <div class="col-md-4">
+                <label asp-for="DateRegOn" class="form-label fw-bold">Дата</label>
                 <input asp-for="DateRegOn" class="form-control" />
                 <span asp-validation-for="DateRegOn" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-danger">
+                <i class="bi bi-check2-circle me-2"></i>Създай
+            </button>
+            <a asp-action="Index" class="btn btn-outline-dark">Назад</a>
+        </div>
+    </form>
 </div>
 
 @section Scripts {
