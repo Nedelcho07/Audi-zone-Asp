@@ -1,8 +1,5 @@
-﻿using Audi_zone.Data;
 using Audi_zone.Models;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-
 
 namespace Audi_zone.Services
 {
@@ -13,16 +10,14 @@ namespace Audi_zone.Services
             using var scope = app.ApplicationServices.CreateScope();
 
             var services = scope.ServiceProvider;
-
             var loggerFactory = services.GetRequiredService<ILoggerFactory>();
+
             try
             {
-                var context = services.GetRequiredService<ApplicationDbContext>();
                 var userManager = services.GetRequiredService<UserManager<Client>>();
                 var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-                //Sazdavane na roles
+
                 await SeedRolesAsync(roleManager);
-                //sazdavane na SUPER ADMIN s vsi4kite mu roli
                 await SeedSuperAdminAsync(userManager);
             }
             catch (Exception ex)
@@ -33,46 +28,49 @@ namespace Audi_zone.Services
 
             return app;
         }
-        public static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
+
+        private static async Task SeedRolesAsync(RoleManager<IdentityRole> roleManager)
         {
-            //foreach (var role in Enum.GetValues(Roles))
-            //{
-            //                    var roleExist = await roleManager.RoleExistsAsync(role); 
-            //    if (!roleExist)
-            //    { }
-            //}
-           
-                //Seed Roles
-                await roleManager.CreateAsync(new IdentityRole("Admin"));
-                await roleManager.CreateAsync(new IdentityRole("User"));
-                await roleManager.CreateAsync(new IdentityRole("Guest"));
-            }
+            var roles = new[] { "Admin", "User", "Guest" };
 
-            public static async Task SeedSuperAdminAsync(UserManager<Client> userManager)
+            foreach (var role in roles)
             {
-                //Seed Default User
-                var defaultUser = new Client
+                if (!await roleManager.RoleExistsAsync(role))
                 {
-                    UserName = "superadmin",
-                    Email = "superadmin@gmail.com",
-                    FirstName = "Tonya",
-                    LastName = "Belezireva",
-                    PhoneNumber = "0899999999",
-                    EmailConfirmed = true,
-                    PhoneNumberConfirmed = true
-                };
-
-                var user = await userManager.FindByEmailAsync(defaultUser.Email);
-                if (user == null)
-                {
-                    var result = await userManager.CreateAsync(defaultUser, "123!@#Qwe");
-                    if (result.Succeeded)
-                    {
-                        await userManager.AddToRoleAsync(defaultUser, "Admin");
-                        //await userManager.AddToRoleAsync(defaultUser, Roles.Guest.ToString());
-                        //await userManager.AddToRoleAsync(defaultUser, Roles.User.ToString());                    
-                    }
+                    await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
         }
+
+        private static async Task SeedSuperAdminAsync(UserManager<Client> userManager)
+        {
+            var defaultUser = new Client
+            {
+                UserName = "superadmin",
+                Email = "superadmin@gmail.com",
+                FirstName = "Tonya",
+                LastName = "Belezireva",
+                PhoneNumber = "0899999999",
+                EmailConfirmed = true,
+                PhoneNumberConfirmed = true
+            };
+
+            var user = await userManager.FindByEmailAsync(defaultUser.Email);
+            if (user == null)
+            {
+                var result = await userManager.CreateAsync(defaultUser, "123!@#Qwe");
+                if (result.Succeeded)
+                {
+                    await userManager.AddToRoleAsync(defaultUser, "Admin");
+                }
+
+                return;
+            }
+
+            if (!await userManager.IsInRoleAsync(user, "Admin"))
+            {
+                await userManager.AddToRoleAsync(user, "Admin");
+            }
+        }
     }
+}

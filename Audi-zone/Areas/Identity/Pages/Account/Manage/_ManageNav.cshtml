@@ -1,0 +1,33 @@
+@{
+    var currentPage = ViewContext.RouteData.Values["page"]?.ToString() ?? string.Empty;
+
+    string NavClass(string page)
+    {
+        return string.Equals(currentPage, page, StringComparison.OrdinalIgnoreCase)
+            ? "manage-nav-link active d-flex align-items-center gap-2 p-3 rounded-2 text-decoration-none fw-bold text-white bg-dark"
+            : "manage-nav-link d-flex align-items-center gap-2 p-3 rounded-2 text-decoration-none fw-bold text-dark";
+    }
+}
+
+<nav class="manage-nav d-grid gap-2" aria-label="Настройки на профила">
+    <a class="@NavClass("/Account/Manage/Index")" asp-page="./Index">
+        <i class="bi bi-person-lines-fill"></i>
+        <span>Профил</span>
+    </a>
+    <a class="@NavClass("/Account/Manage/Email")" asp-page="./Email">
+        <i class="bi bi-envelope-at"></i>
+        <span>Имейл</span>
+    </a>
+    <a class="@NavClass("/Account/Manage/ChangePassword")" asp-page="./ChangePassword">
+        <i class="bi bi-key"></i>
+        <span>Парола</span>
+    </a>
+    <a class="@NavClass("/Account/Manage/TwoFactorAuthentication")" asp-page="./TwoFactorAuthentication">
+        <i class="bi bi-shield-lock"></i>
+        <span>2FA защита</span>
+    </a>
+    <a class="@NavClass("/Account/Manage/PersonalData")" asp-page="./PersonalData">
+        <i class="bi bi-database-lock"></i>
+        <span>Лични данни</span>
+    </a>
+</nav>
